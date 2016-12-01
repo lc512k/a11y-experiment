@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="eng-gb">
+<head>
+	<title>Accessibility Experiment</title>
+
+<style type="text/css">
+
+	.menu {
+		margin: 30px;
+	}
+
+	.side {
+		position: fixed;
+	}
+
+	.side a {
+		display: block;
+	}
+
+	fieldset {
+		margin: 30px 200px;
+		width: 300px;
+	}
+
+	label {
+		display: block;
+	}
+
+	* {
+		filter: blur(5px);
+	}
+</style>
+
+<script>
+	document.onclick = function () {}
+	document.addEventListener('contextmenu', event => event.preventDefault());
+	console.log('%c👹', 'font-size: 100px')
+	console.log('%c Don\'t be evil, please close dev tools', 'font-size: 15px; color: brown')
+</script>
+
+</head>
+<body>
+
+	<div class="instructions" aria-hidden=true>instructions</div>
+
+	<a href="#content">skip to main content</a>
+
+	<nav role="navigation" class="menu" aria-label="main menu">
+		<a href="/">Menu item 1</a>
+		<a href="/">Menu item 2</a>
+		<a href="/">Menu item 3</a>
+		<a href="/">Menu item 4</a>
+		<a href="/">Menu item 5</a>
+		<a href="/">Menu item 6</a>
+		<a href="/">Menu items are annoying</a>
+	</nav>
+
+
+	<nav role="navigation" class="side menu" aria-label="side menu">
+		<a href="/">Side menu item 1</a>
+		<a href="/">Side menu item 2</a>
+		<a href="/">Side menu item 3</a>
+		<a href="/">Side menu item 4</a>
+		<a href="/">Side menu item 5</a>
+		<a href="/">Side menu item 6</a>
+		<a href="/">Side menu item 7</a>
+		<a href="/">Side menu item 8</a>
+		<a href="/">Side menu item 9</a>
+	</nav>
+
+<a name="content" id="content"></a>
+<form id="form" aria-label="i am the form">
+	<fieldset aria-role="group">
+	<legend>Tell us who you are</legend>
+			<label for="input1">Name</label>
+			<input id="input1" type="text" name="" placeholder="enter your name">
+
+			<label for="input2">Email</label>
+			<input id="input2" type="email" name="" placeholder="enter your email">
+
+			<label for="input3">How many times have you tried to fill out this form?</label>
+			<input id="input3" type="text" name="">
+	</fieldset>
+
+	<fieldset aria-role="group">
+	<legend aria-label="legend label">How are you finding screen readers so far?</legend>
+
+			<label for="love">I love them</label>
+			<input type="radio" name="screen-readers" value="love" id="love">
+
+			<label for="hate">I hate them</label>
+			<input type="radio" name="screen-readers" value="hate" id="hate">
+
+			<label for="idk">I don't know what the question was</label>
+			<input type="radio" name="screen-readers" value="idk" id="idk">
+
+			<label for="omg">OMG get me out of here</label>
+			<input type="radio" name="screen-readers" value="omg" id="omg">
+	</fieldset>
+
+	<button type="submit" form="form">Submit</button>
+</form>
+</div>
+
+</body>
+</html>
