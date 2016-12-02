@@ -1,0 +1,25 @@
+{
+  "name": "a11y-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lc512k/a11y-experiment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lc512k/a11y-experiment/issues"
+  },
+  "homepage": "https://github.com/lc512k/a11y-experiment#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "nodemailer": "^2.6.4",
+    "path": "^0.12.7"
+  }
+}

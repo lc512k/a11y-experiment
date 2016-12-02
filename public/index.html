@@ -17,8 +17,12 @@
 		display: block;
 	}
 
+	form {
+		margin-left: 200px;
+	}
+
 	fieldset {
-		margin: 30px 200px;
+		margin: 60px 0;
 		width: 400px;
 	}
 
@@ -27,7 +31,7 @@
 	}
 
 	* {
-		filter: blur(7px);
+		filter: blur(1px);
 	}
 </style>
 
@@ -67,21 +71,23 @@
 	</nav>
 
 <div name="content" id="content" role="main">
-	<form id="form" aria-label="Screen reader survey">
-		<fieldset aria-role="group">
-		<legend>Tell us who you are</legend>
+	<form id="form" aria-label="Screen reader survey" action="/thankyou" method="post">
+		<fieldset aria-role="group" aria-label="Tell us who you are">
+		<!-- why does labelledby not work here? -->
+		<legend id="info">Tell us who you are</legend>
 				<label for="input1">Name</label>
-				<input id="input1" type="text" name="" placeholder="enter your name">
+				<input id="input1" type="text" name="name" placeholder="enter your name">
 
 				<label for="input2">Email</label>
-				<input id="input2" type="email" name="" placeholder="enter your email">
+				<input id="input2" type="email" name="email" placeholder="enter your email">
 
 				<label for="input3">How many times have you tried to fill out this form?</label>
-				<input id="input3" type="text" name="">
+				<input id="input3" type="text" name="tries">
 		</fieldset>
 
-		<fieldset aria-role="group">
-		<legend aria-label="legend label">How are you finding screen readers so far?</legend>
+		<fieldset aria-role="group" aria-label="How are you finding screen readers so far?">
+		<!-- why does labelledby not work here? -->
+		<legend id="sr">How are you finding screen readers so far?</legend>
 
 				<label for="love">I love them</label>
 				<input type="radio" name="screen-readers" value="love" id="love">
@@ -96,7 +102,7 @@
 				<input type="radio" name="screen-readers" value="omg" id="omg">
 		</fieldset>
 
-		<button type="submit" form="form">Submit</button>
+		<button type="submit" form="form" id="submit">Submit</button>
 	</form>
 </div>
 
