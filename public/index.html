@@ -30,17 +30,16 @@
 		display: block;
 	}
 
+	button {
+		background-color:white;
+		border: 1px solid lightgrey;
+		color: lightgrey;
+	}
+
 	* {
 		filter: blur(7px);
 	}
 </style>
-
-<script>
-	document.onclick = function () {}
-	document.addEventListener('contextmenu', event => event.preventDefault());
-	console.log('%c👹', 'font-size: 100px')
-	console.log('%c Don\'t be evil, please close dev tools', 'font-size: 15px; color: brown')
-</script>
 
 </head>
 <body>
@@ -108,5 +107,10 @@
 
 
 
+<script>
+	document.addEventListener('contextmenu', event => event.preventDefault());
+	console.log('%c👹', 'font-size: 100px')
+	console.log('%c Don\'t be evil, please close dev tools', 'font-size: 15px; color: brown')
+</script>
 </body>
 </html>

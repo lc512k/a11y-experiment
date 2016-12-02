@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use('/', express.static(__dirname + '/public'));
 app.post('/thankyou', function (req, res) {
+	console.log('thank you page')
 	console.log(req.body)
 
 	var options = {
