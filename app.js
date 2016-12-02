@@ -14,22 +14,20 @@ app.use('/', express.static(__dirname + '/public'));
 app.post('/thankyou', function (req, res) {
 	console.log(req.body)
 
-	module.exports = function sendEmails () {
-		var options = {
-			from: '"a11y survey" <no-reply@ft.com>',
-			to: 'laura.carvajal@ft.com',
-			subject: req.body.name,
-			text: JSON.stringify(req.body)
-		};
-
-		transporter.sendMail(options, function (emailError, data) {
-			if (emailError) {
-				return logger.info('Error sending emails', emailError);
-			}
-			console.log('email sent!')
-		});
+	var options = {
+		from: '"a11y survey" <no-reply@ft.com>',
+		to: 'laura.carvajal@ft.com',
+		subject: req.body.name,
+		text: JSON.stringify(req.body)
 	};
 
+	transporter.sendMail(options, function (emailError, data) {
+		if (emailError) {
+			console.log('Error sending emails', emailError);
+			return;
+		}
+		console.log('email sent!')
+	});
 
 	res.sendFile(path.join(__dirname + '/public/thankyou.html'));
 })
