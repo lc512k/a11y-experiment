@@ -32,4 +32,4 @@ app.post('/thankyou', function (req, res) {
 	res.sendFile(path.join(__dirname + '/public/thankyou.html'));
 })
 
-app.listen(3000, function() { console.log('listening')});
+app.listen(process.env.PORT || 3000, function() { console.log('listening')});
